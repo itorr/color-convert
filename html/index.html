@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="color-convert.css">
+</head>
+<body>
+	<div class="app">
+		<form class="form-box" @submit="convert()">
+			<input type="text" class="input" placeholder="请输入颜色值" 
+			v-model="text"
+			@input="convert()">
+			<button class="btn">转换</button>
+		</form>
+		<div class="output-box" v-if="">
+			<div class="output-item">
+				<div class="output-title">HEX</div>
+				<div class="output-value">{{hex}}</div>
+			</div>
+			<div class="output-item">
+				<div class="output-title">RGB</div>
+				<div class="output-value">{{rgb}}</div>
+			</div>
+			<div class="output-item">
+				<div class="output-title">HSL</div>
+				<div class="output-value">{{hsl}}</div>
+			</div>
+		</div>
+	</div>
+	<script src="../vue.2.6.11.min.js"></script>
+	<script src="color-convert.js"></script>
+</body>
+</html>
